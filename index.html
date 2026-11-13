@@ -87,6 +87,19 @@ footer{padding:23px 0;background:#050e18;color:#8193a4;font-size:.8rem}.foot{dis
 @media(max-width:600px){.exercise-head{padding:27px 22px}.exercise-head:after{display:none}.exercise-toc-wrap{padding:19px}.exercise-toc{grid-template-columns:1fr}.exercise-part{padding:21px 18px}.exercise-part h3{font-size:1.35rem}.exercise-table{display:block;overflow-x:auto;white-space:normal}}
 @media print{.exercise{background:#fff!important;color:#111!important}.exercise-head,.exercise-part,.exercise-toc-wrap{background:#fff!important;color:#111!important;box-shadow:none;border:1px solid #bbb}.exercise-intro,.exercise-part p,.exercise-part li,.exercise-toc-title p,.exercise-toc a{color:#222!important}.exercise-part h3,.exercise-part h4{color:#111!important}.exercise-meta span{color:#111!important;border:1px solid #aaa}.exercise-toc{display:none}.exercise-part{break-inside:avoid}.exercise-table th{background:#eee!important;color:#111!important}.exercise-table td{color:#111!important;border-color:#aaa!important}.exercise-end{color:#111!important}}
 
+
+.assessment-form label{display:block;color:#e8d6b4;font-weight:750;font-size:.9rem;margin:17px 0}
+.assessment-form input,.assessment-form textarea{display:block;width:100%;margin-top:7px;padding:13px 14px;border-radius:8px;border:1px solid #34506a;background:#071624;color:#eef4fa;font:inherit;line-height:1.55;outline:none}
+.assessment-form input:focus,.assessment-form textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px #d5ad681c}
+.assessment-form textarea{resize:vertical;min-height:110px}
+.assessment-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.assessment-submit{border:0;cursor:pointer;font:inherit;margin-top:10px}
+.submission-links{display:grid;gap:12px;margin-top:20px}
+.submission-links a{display:block;padding:14px 17px;border:1px solid #3c9877;border-radius:9px;background:#3c987711;color:#a9e0c8;text-decoration:none;font-weight:800}
+.submission-links a:hover{background:#3c987722}
+@media(max-width:700px){.assessment-grid{grid-template-columns:1fr}.assessment-form label{font-size:.86rem}}
+@media print{#avaliacao-online{display:none!important}}
+
 </style>
 </head>
 <body>
@@ -233,8 +246,102 @@ footer{padding:23px 0;background:#050e18;color:#8193a4;font-size:.8rem}.foot{dis
 <div class="exercise-end"><strong>Enunciado disponibilizado para estudo e avaliação.</strong><br>A resolução ainda não está publicada. O desafio é aplicar os conhecimentos e apresentar um trabalho contabilístico completo e fundamentado.</div>
 </div></section>
 
+
+<section class="content exercise" id="avaliacao-online">
+  <div class="wrap">
+    <div class="exercise-head">
+      <span class="kicker">Avaliação individual</span>
+      <h2>Realizar o exercício<br><em style="color:var(--gold)">e enviar ao professor</em></h2>
+      <p class="exercise-intro">Preencha os seus dados e registe as respostas. No final, o website prepara três mensagens organizadas para enviar ao professor pelo WhatsApp. Não é necessário criar conta nem existe uma base de dados.</p>
+      <div class="exercise-meta"><span>Submissão individual</span><span>Correcção pelo professor</span><span>Classificação: 0–20 valores</span></div>
+    </div>
+
+    <form id="assessmentForm" class="assessment-form">
+      <div class="exercise-part">
+        <h3>Identificação do formando</h3>
+        <div class="assessment-grid">
+          <label>Nome completo<input id="studentName" type="text" autocomplete="name" placeholder="Escreva o seu nome completo" required></label>
+          <label>Número de telefone<input id="studentPhone" type="tel" autocomplete="tel" placeholder="Ex.: 923 000 000" required></label>
+          <label>Data da realização<input id="assessmentDate" type="date" required></label>
+        </div>
+        <p class="exercise-note">Utilize um número de telefone com WhatsApp. A data é preenchida automaticamente, mas pode ser corrigida se necessário.</p>
+      </div>
+
+      <div class="exercise-part">
+        <h3>Respostas — Parte I e Parte II</h3>
+        <label>PARTE I — Situação patrimonial inicial<textarea id="answer1" rows="7" placeholder="Apresente a classificação dos elementos, os cálculos do activo, passivo e capital próprio e o balanço de abertura." required></textarea></label>
+        <label>PARTE II — Operações realizadas durante Janeiro<textarea id="answer2" rows="9" placeholder="Registe o tratamento contabilístico das dez operações. Apresente cálculos, valores e contas utilizadas." required></textarea></label>
+      </div>
+
+      <div class="exercise-part">
+        <h3>Respostas — Parte III à Parte VIII</h3>
+        <label>PARTE III — Diário Geral e Razão Geral<textarea id="answer3" rows="9" placeholder="Apresente os lançamentos, contas debitadas e creditadas, transferência para o Razão e saldos." required></textarea></label>
+        <label>PARTE IV — Tratamento do IVA<textarea id="answer4" rows="5" placeholder="Cálculo do IVA liquidado, dedutível e saldo final, com os pressupostos adoptados." required></textarea></label>
+        <label>PARTE V — Processamento de salários<textarea id="answer5" rows="5" placeholder="INSS do trabalhador e da entidade empregadora, salário líquido, encargos e lançamentos." required></textarea></label>
+        <label>PARTE VI — Balancete de verificação<textarea id="answer6" rows="7" placeholder="Apresente as contas, movimentos a débito e a crédito e saldos devedores e credores." required></textarea></label>
+        <label>PARTE VII — Operações de regularização<textarea id="answer7" rows="5" placeholder="Apresente os lançamentos de regularização e o apuramento dos custos e proveitos." required></textarea></label>
+        <label>PARTE VIII — Demonstrações financeiras<textarea id="answer8" rows="8" placeholder="Apresente o Balanço, a Demonstração de Resultados e a Demonstração de Fluxos de Caixa." required></textarea></label>
+      </div>
+
+      <div class="exercise-part">
+        <h3>Respostas — Parte IX e Parte X</h3>
+        <label>PARTE IX — Questões teóricas e de análise<textarea id="answer9" rows="10" placeholder="Responda, por ordem, às dez questões teóricas do enunciado." required></textarea></label>
+        <label>PARTE X — Relatório final do contabilista<textarea id="answer10" rows="8" placeholder="Redija o relatório dirigido ao gerente, incluindo situação patrimonial, resultados, dívidas, liquidez, obrigações, riscos e recomendações." required></textarea></label>
+      </div>
+
+      <div class="exercise-part">
+        <h3>Preparar a entrega</h3>
+        <p>Depois de preencher todos os campos, toque no botão. Serão apresentados três envios separados para reduzir o risco de mensagens demasiado extensas. Abra cada um e confirme o envio no WhatsApp.</p>
+        <button class="btn assessment-submit" type="submit">Preparar envio para WhatsApp</button>
+        <div id="submissionLinks" class="submission-links" aria-live="polite"></div>
+        <p class="exercise-note">Importante: as respostas não são guardadas num servidor. O WhatsApp será aberto com cada mensagem pré-preenchida; o formando deve tocar em <strong>Enviar</strong>. Se sair ou actualizar a página antes de concluir, poderá perder o que escreveu.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
 <section class="teacher"><div class="wrap teacher-inner"><div><span class="kicker">Orientação da formação</span><h2>Professor Felicidade Dias</h2><p>Aprender • Praticar • Evoluir — lado a lado, com respeito e espírito de equipa.</p></div><span class="teacher-badge">Um grupo · Um caminho · Crescimento conjunto</span></div></section>
 </main>
 <footer><div class="wrap foot"><span>© <span id="year"></span> Além dos Números</span><span>Conhecimento que ganha significado quando é partilhado.</span></div></footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+<script>
+(function(){
+ const dateField=document.getElementById('assessmentDate');
+ if(dateField){const now=new Date();dateField.value=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');}
+ const form=document.getElementById('assessmentForm');
+ if(!form)return;
+ const val=id=>document.getElementById(id).value.trim();
+ const labels=['PARTE I — Situação patrimonial inicial','PARTE II — Operações de Janeiro','PARTE III — Diário e Razão Geral','PARTE IV — Tratamento do IVA','PARTE V — Processamento de salários','PARTE VI — Balancete','PARTE VII — Regularizações','PARTE VIII — Demonstrações financeiras','PARTE IX — Questões teóricas','PARTE X — Relatório final'];
+ const ids=['answer1','answer2','answer3','answer4','answer5','answer6','answer7','answer8','answer9','answer10'];
+ function block(title,start,end){
+   let text='AVALIAÇÃO INDIVIDUAL — ALÉM DOS NÚMEROS\n'+title+'\n';
+   text+='Formando: '+val('studentName')+'\nTelefone: '+val('studentPhone')+'\nData: '+val('assessmentDate')+'\nEmpresa: COMERCIAL FÉNIX, LDA.\n\n';
+   for(let i=start;i<end;i++)text+=labels[i]+'\n'+val(ids[i])+'\n\n';
+   return text;
+ }
+ form.addEventListener('submit',function(ev){
+   ev.preventDefault();
+   if(!form.reportValidity())return;
+   const raw=val('studentPhone').replace(/[^0-9+]/g,'').replace(/^\+/,'');
+   if(!/^\d{9,15}$/.test(raw)){alert('Confirme o número de telefone. Introduza entre 9 e 15 algarismos, incluindo o indicativo do país se necessário.');return;}
+   const phone='244948138785';
+   const groups=[
+     ['Envio 1 de 3 — Identificação, Parte I e Parte II',0,2],
+     ['Envio 2 de 3 — Partes III a VIII',2,8],
+     ['Envio 3 de 3 — Partes IX e X',8,10]
+   ];
+   const box=document.getElementById('submissionLinks');
+   box.innerHTML='<p class="exercise-note"><strong>As mensagens estão preparadas.</strong> Envie-as pela ordem indicada. Em cada ligação, confirme o destinatário e toque em Enviar no WhatsApp.</p>';
+   groups.forEach(g=>{
+     const a=document.createElement('a');
+     a.href='https://wa.me/'+phone+'?text='+encodeURIComponent(block(g[0],g[1],g[2]));
+     a.target='_blank';a.rel='noopener noreferrer';a.textContent='Abrir WhatsApp — '+g[0];
+     box.appendChild(a);
+   });
+   box.scrollIntoView({behavior:'smooth',block:'center'});
+ });
+})();
+</script>
+
 </body></html>
