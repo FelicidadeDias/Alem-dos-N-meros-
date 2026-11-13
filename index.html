@@ -115,6 +115,24 @@ footer{padding:23px 0;background:#050e18;color:#8193a4;font-size:.8rem}.foot{dis
 @media(max-width:700px){.assessment-form .assessment-grid{grid-template-columns:1fr}.assessment-form .answer-table{font-size:.79rem}.assessment-form .table-scroll{margin-inline:-2px}}
 @media print{#avaliacao-online{display:none!important}}
 
+
+/* Galeria visual — contabilidade em contexto real */
+.visual-gallery{padding:66px 0 74px;background:linear-gradient(180deg,#0a1b2c,#071321);border-block:1px solid #23384c}
+.visual-gallery .section-title{margin-bottom:27px}
+.visual-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.visual-card{position:relative;min-height:285px;overflow:hidden;border:1px solid #d5ad6844;border-radius:16px;background:#10243a;box-shadow:0 18px 45px #0004;isolation:isolate}
+.visual-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .65s ease;z-index:-2}
+.visual-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#07132100 18%,#07132122 42%,#071321ed 100%);z-index:-1}
+.visual-card:hover img{transform:scale(1.055)}
+.visual-card figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 21px 19px}
+.visual-card .visual-tag{display:inline-block;margin-bottom:8px;color:#f0d7a7;font-size:.68rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
+.visual-card strong{display:block;color:#fff;font:1.35rem/1.15 Georgia,serif}
+.visual-card small{display:block;margin-top:7px;color:#c3d0dc;font-size:.82rem;line-height:1.5}
+.visual-credit{margin:16px 0 0;color:#8295a7;font-size:.72rem}
+.visual-credit a{color:#b7c9d8;text-decoration:underline;text-decoration-color:#d5ad6877;text-underline-offset:3px}
+@media(max-width:820px){.visual-grid{grid-template-columns:1fr 1fr}.visual-card{min-height:245px}}
+@media(max-width:560px){.visual-grid{grid-template-columns:1fr}.visual-card{min-height:260px}.visual-gallery{padding:50px 0}}
+@media(prefers-reduced-motion:reduce){.visual-card img{transition:none}}
 </style>
 </head>
 <body>
@@ -145,6 +163,16 @@ footer{padding:23px 0;background:#050e18;color:#8193a4;font-size:.8rem}.foot{dis
 <article class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-8-4.5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.5-8 11-8 11Z"/><path d="M8 12h2l1.2-2.5L13 15l1.2-3H17"/></svg></div><h3>Motivação e confiança</h3><p>Incentivo para enfrentar desafios, aprender com os erros e reconhecer cada progresso.</p></article>
 <article class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.3"/><path d="M3.5 20v-1.5A5.5 5.5 0 0 1 9 13h.5a5.5 5.5 0 0 1 5.5 5.5V20M15 14a4.5 4.5 0 0 1 5.5 4.4V20"/></svg></div><h3>Respeito e união</h3><p>Um ambiente de compreensão, colaboração e respeito pelo percurso de cada integrante.</p></article>
 </div></div></section>
+
+<section class="visual-gallery" aria-labelledby="visual-title"><div class="wrap">
+<div class="section-title"><span class="kicker">A prática da profissão</span><h2 id="visual-title">A Contabilidade ganha vida nos detalhes.</h2><p class="lead">Organização documental, análise financeira e atenção aos registos: competências que se desenvolvem com estudo, método e prática constante.</p></div>
+<div class="visual-grid">
+<figure class="visual-card"><img src="https://images.unsplash.com/photo-1762427354051-a9bdb181ae3b?auto=format&fit=crop&w=1200&q=82" alt="Secretária profissional com calculadora, gráficos e dossiers de documentos financeiros" loading="lazy" decoding="async"><figcaption><span class="visual-tag">01 · Organização</span><strong>Registar com método</strong><small>Documentos bem organizados são a base de uma contabilidade fiável.</small></figcaption></figure>
+<figure class="visual-card"><img src="https://images.unsplash.com/photo-1772588627327-1eeddcf73c11?auto=format&fit=crop&w=1200&q=82" alt="Mãos a rever documentos financeiros com calculadora e computador portátil" loading="lazy" decoding="async"><figcaption><span class="visual-tag">02 · Análise</span><strong>Compreender os números</strong><small>Conferir, comparar e interpretar antes de tomar decisões.</small></figcaption></figure>
+<figure class="visual-card"><img src="https://images.unsplash.com/photo-1762427354397-854a52e0ded7?auto=format&fit=crop&w=1200&q=82" alt="Calculadora, gráficos e lápis numa mesa de trabalho dedicada à aprendizagem financeira" loading="lazy" decoding="async"><figcaption><span class="visual-tag">03 · Aprendizagem</span><strong>Aprender fazendo</strong><small>O raciocínio profissional fortalece-se com exercícios e prática contínua.</small></figcaption></figure>
+</div>
+<p class="visual-credit">Fotografias: <a href="https://unsplash.com/photos/desk-with-calculator-charts-and-binders-FVwy7PBiSUo" target="_blank" rel="noopener noreferrer">Cht Gsml</a>, <a href="https://unsplash.com/photos/person-reviewing-documents-with-calculator-and-laptop-0oZpRxG5Hkk" target="_blank" rel="noopener noreferrer">Kelly Sikkema</a> e <a href="https://unsplash.com/photos/desk-with-calculator-charts-and-pencil-dspKrJYp644" target="_blank" rel="noopener noreferrer">Cht Gsml</a> · Unsplash License.</p>
+</div></section>
 
 <section class="content quote-section"><div class="wrap quote-grid">
 <div class="quote-visual"><svg viewBox="0 0 420 260" role="img" aria-label="Ilustração de balancete contabilístico"><rect x="35" y="18" width="350" height="220" rx="12" fill="#0d2031" stroke="#d5ad68" stroke-opacity=".65"/><text x="58" y="51" fill="#d5ad68" font-size="13" letter-spacing="3">BALANCETE</text><path d="M58 68h304M58 105h304M58 142h304M58 179h304M58 216h304" stroke="#2a4962"/><g fill="#b9c8d5" font-size="12"><text x="60" y="92">Caixa</text><text x="60" y="129">Clientes</text><text x="60" y="166">Fornecedores</text><text x="60" y="203">Capital</text></g><g fill="#8bd0b1" font-size="12" text-anchor="end"><text x="340" y="92">500.000</text><text x="340" y="129">800.000</text><text x="340" y="166">900.000</text><text x="340" y="203">5.500.000</text></g><path d="M250 60v-13m-9 0h18" stroke="#d5ad68" stroke-width="2"/></svg></div>
