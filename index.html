@@ -51,6 +51,42 @@ footer{padding:23px 0;background:#050e18;color:#8193a4;font-size:.8rem}.foot{dis
 .exercise-end{padding:23px;border:1px dashed #d5ad6877;border-radius:12px;text-align:center;color:#e8d6b4;margin-top:20px}
 @media(max-width:700px){.exercise-head{display:block}.exercise-part{padding:18px}.exercise-table{font-size:.82rem}.exercise-table th,.exercise-table td{padding:8px 7px}}
 
+
+/* Apresentação editorial do exercício principal */
+.exercise{padding-top:68px;padding-bottom:86px;background:linear-gradient(180deg,#071321 0%,#091827 55%,#071321 100%)}
+.exercise-head{display:block;padding:36px 38px;border:1px solid #d5ad6855;border-radius:18px;background:linear-gradient(125deg,#102b43,#0b1a2b 72%);box-shadow:0 22px 65px #0005;position:relative;overflow:hidden}
+.exercise-head:after{content:"CONTABILIDADE\A GERAL E FINANCEIRA";white-space:pre;position:absolute;right:28px;bottom:12px;color:#ffffff08;font:800 clamp(1.3rem,3vw,2.4rem)/1.1 Georgia,serif;letter-spacing:.08em;text-align:right;pointer-events:none}
+.exercise-head h2{font-size:clamp(2.4rem,5vw,4.1rem);margin:14px 0 16px;line-height:1.04}
+.exercise-intro{font-size:1.02rem;max-width:760px;line-height:1.8}
+.exercise-meta{margin-top:23px;position:relative;z-index:1}
+.exercise-meta span{font-size:.76rem;letter-spacing:.035em;padding:7px 13px;background:#d5ad6814}
+.exercise-toc-wrap{display:grid;grid-template-columns:.72fr 1.28fr;gap:26px;margin:32px 0 38px;padding:27px;border:1px solid var(--line);border-radius:15px;background:#0c1d2e}
+.exercise-toc-title h3{font:1.65rem Georgia,serif;color:#f0d7a7;margin:9px 0}
+.exercise-toc-title p{font-size:.88rem;color:var(--muted);margin:0;max-width:300px}
+.exercise-toc{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.exercise-toc a{display:flex;align-items:center;gap:10px;text-decoration:none;padding:9px 11px;border:1px solid #23384c;border-radius:8px;color:#dbe5ed;font-size:.82rem;line-height:1.35;transition:.2s}
+.exercise-toc a:hover{border-color:var(--gold);background:#d5ad6810;color:#fff}
+.exercise-toc a span{color:var(--gold);font-size:.72rem;font-weight:900;min-width:22px}
+.exercise-part{padding:28px 30px;margin:18px 0;border-radius:13px;background:linear-gradient(145deg,#10243a,#0b1a2b);border:1px solid #2a4055;box-shadow:0 12px 35px #0002;scroll-margin-top:25px}
+.exercise-part h3{font-size:1.55rem;line-height:1.25;padding-bottom:13px;border-bottom:1px solid #d5ad6844;margin-bottom:19px;letter-spacing:-.01em}
+.exercise-part h4{font-size:.92rem;letter-spacing:.04em;text-transform:uppercase;margin:22px 0 8px}
+.exercise-part p,.exercise-part li{line-height:1.8}
+.exercise-part ol li,.exercise-part ul li{padding-left:4px;margin:4px 0}
+.exercise-table{border-radius:8px;overflow:hidden}
+.exercise-table th{font-size:.8rem;letter-spacing:.025em}
+.exercise-table td{font-variant-numeric:tabular-nums}
+.exercise-part#identificacao .exercise-table td:last-child,
+.exercise-part#parte-i .exercise-table td:last-child,
+.exercise-part#avaliacao .exercise-table td:last-child{text-align:right}
+.exercise-part#parte-ii h4{display:flex;align-items:center;gap:10px;text-transform:none;letter-spacing:0;color:#f0d7a7}
+.exercise-part#parte-ii h4:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green)}
+.exercise-part#parte-viii h4{display:inline-block;padding:5px 10px;border-radius:5px;background:#1769aa22;color:#8dcaff}
+.exercise-note{line-height:1.7}
+.exercise-end{margin-top:25px;background:#d5ad680d;line-height:1.8}
+@media(max-width:800px){.exercise-toc-wrap{grid-template-columns:1fr}.exercise-toc-title p{max-width:none}}
+@media(max-width:600px){.exercise-head{padding:27px 22px}.exercise-head:after{display:none}.exercise-toc-wrap{padding:19px}.exercise-toc{grid-template-columns:1fr}.exercise-part{padding:21px 18px}.exercise-part h3{font-size:1.35rem}.exercise-table{display:block;overflow-x:auto;white-space:normal}}
+@media print{.exercise{background:#fff!important;color:#111!important}.exercise-head,.exercise-part,.exercise-toc-wrap{background:#fff!important;color:#111!important;box-shadow:none;border:1px solid #bbb}.exercise-intro,.exercise-part p,.exercise-part li,.exercise-toc-title p,.exercise-toc a{color:#222!important}.exercise-part h3,.exercise-part h4{color:#111!important}.exercise-meta span{color:#111!important;border:1px solid #aaa}.exercise-toc{display:none}.exercise-part{break-inside:avoid}.exercise-table th{background:#eee!important;color:#111!important}.exercise-table td{color:#111!important;border-color:#aaa!important}.exercise-end{color:#111!important}}
+
 </style>
 </head>
 <body>
@@ -117,8 +153,24 @@ footer{padding:23px 0;background:#050e18;color:#8193a4;font-size:.8rem}.foot{dis
 
 <section class="content exercise" id="exercicio-principal"><div class="wrap">
 <div class="exercise-head"><div><span class="kicker">Desafio central da formação</span><h2>Exercício Prático de<br><em style="color:var(--gold)">Contabilidade Geral</em></h2><p class="exercise-intro">Um estudo de caso integrado para aplicar conhecimentos contabilísticos, desenvolver o raciocínio profissional e acompanhar o ciclo contabilístico completo de uma empresa.</p><div class="exercise-meta"><span>Nível: Avançado</span><span>Janeiro de 2026</span><span>Moeda: Kwanza (Kz)</span><span>20 valores</span></div></div></div>
-
-<div class="exercise-part"><h3>Identificação do exercício</h3>
+<div class="exercise-toc-wrap">
+<div class="exercise-toc-title"><span class="kicker">Organização do trabalho</span><h3>Índice do exercício</h3><p>Consulte as secções pela ordem do ciclo contabilístico. Seleccione um título para ir directamente à respectiva matéria.</p></div>
+<nav class="exercise-toc" aria-label="Índice do exercício">
+<a href="#identificacao"><span>01</span>Identificação do exercício</a>
+<a href="#parte-i"><span>02</span>PARTE I – Situação Patrimonial Inicial</a>
+<a href="#parte-ii"><span>03</span>PARTE II – Operações Realizadas Durante Janeiro</a>
+<a href="#parte-iii"><span>04</span>PARTE III – Registos Contabilísticos</a>
+<a href="#parte-iv"><span>05</span>PARTE IV – Tratamento do IVA</a>
+<a href="#parte-v"><span>06</span>PARTE V – Processamento de Salários</a>
+<a href="#parte-vi"><span>07</span>PARTE VI – Balancete de Verificação</a>
+<a href="#parte-vii"><span>08</span>PARTE VII – Operações de Regularização</a>
+<a href="#parte-viii"><span>09</span>PARTE VIII – Demonstrações Financeiras</a>
+<a href="#parte-ix"><span>10</span>PARTE IX – Questões Teóricas e de Análise</a>
+<a href="#parte-x"><span>11</span>PARTE X – Relatório Final do Contabilista</a>
+<a href="#avaliacao"><span>12</span>Critérios de Avaliação</a>
+<a href="#instrucoes"><span>13</span>Instruções</a>
+</nav></div>
+<div class="exercise-part" id="identificacao"><h3>Identificação do exercício</h3>
 <table class="exercise-table"><tbody>
 <tr><th>Campo</th><th>Informação</th></tr>
 <tr><td>Disciplina</td><td>Contabilidade Geral e Financeira</td></tr>
@@ -129,7 +181,7 @@ footer{padding:23px 0;background:#050e18;color:#8193a4;font-size:.8rem}.foot{dis
 </tbody></table>
 </div>
 
-<div class="exercise-part"><h3>PARTE I – Situação Patrimonial Inicial</h3>
+<div class="exercise-part" id="parte-i"><h3>PARTE I – Situação Patrimonial Inicial</h3>
 <p>A empresa COMERCIAL FÉNIX, LDA., dedicada à comercialização de equipamentos informáticos, apresenta os seguintes elementos patrimoniais no início do exercício económico:</p>
 <table class="exercise-table"><thead><tr><th>N.º</th><th>Elementos patrimoniais</th><th>Valor (Kz)</th></tr></thead><tbody>
 <tr><td>1</td><td>Caixa</td><td>500.000</td></tr><tr><td>2</td><td>Depósitos à ordem</td><td>2.500.000</td></tr><tr><td>3</td><td>Clientes</td><td>800.000</td></tr><tr><td>4</td><td>Mercadorias</td><td>1.200.000</td></tr><tr><td>5</td><td>Equipamentos básicos</td><td>3.000.000</td></tr><tr><td>6</td><td>Depreciações acumuladas</td><td>600.000</td></tr><tr><td>7</td><td>Fornecedores</td><td>900.000</td></tr><tr><td>8</td><td>Empréstimos bancários</td><td>1.000.000</td></tr><tr><td>9</td><td>Capital social</td><td>5.500.000</td></tr>
@@ -138,7 +190,7 @@ footer{padding:23px 0;background:#050e18;color:#8193a4;font-size:.8rem}.foot{dis
 <li>Identifique os elementos do activo, passivo e capital próprio.</li><li>Separe o activo corrente do activo não corrente.</li><li>Identifique o passivo corrente e não corrente.</li><li>Determine o valor total do activo.</li><li>Determine o valor total do passivo.</li><li>Determine o capital próprio.</li><li>Elabore o balanço de abertura.</li></ol>
 </div>
 
-<div class="exercise-part"><h3>PARTE II – Operações Realizadas Durante Janeiro</h3>
+<div class="exercise-part" id="parte-ii"><h3>PARTE II – Operações Realizadas Durante Janeiro</h3>
 <p>Durante o mês de Janeiro de 2026, a empresa realizou as seguintes operações:</p>
 <h4>Operação 1 – 03/01</h4><p>Adquiriu mercadorias no valor de 600.000 Kz, acrescido de IVA à taxa de 14%. A compra foi efectuada a crédito.</p>
 <h4>Operação 2 – 05/01</h4><p>Vendeu mercadorias por 1.000.000 Kz, acrescido de IVA à taxa de 14%. O cliente pagou 60% por transferência bancária e ficou a dever os restantes 40%.</p><p>O custo das mercadorias vendidas foi de 550.000 Kz.</p>
@@ -152,32 +204,32 @@ footer{padding:23px 0;background:#050e18;color:#8193a4;font-size:.8rem}.foot{dis
 <h4>Operação 10 – 31/01</h4><p>O banco debitou juros do empréstimo no valor de 25.000 Kz.</p>
 </div>
 
-<div class="exercise-part"><h3>PARTE III – Registos Contabilísticos</h3><p>Com base nas operações apresentadas, efectue:</p><ol><li>Os lançamentos de abertura.</li><li>Os lançamentos de todas as operações no Diário Geral.</li><li>A identificação das contas debitadas e creditadas.</li><li>A aplicação do princípio das partidas dobradas.</li><li>A transferência dos movimentos para o Razão Geral.</li><li>A determinação dos saldos devedores e credores.</li></ol></div>
+<div class="exercise-part" id="parte-iii"><h3>PARTE III – Registos Contabilísticos</h3><p>Com base nas operações apresentadas, efectue:</p><ol><li>Os lançamentos de abertura.</li><li>Os lançamentos de todas as operações no Diário Geral.</li><li>A identificação das contas debitadas e creditadas.</li><li>A aplicação do princípio das partidas dobradas.</li><li>A transferência dos movimentos para o Razão Geral.</li><li>A determinação dos saldos devedores e credores.</li></ol></div>
 
-<div class="exercise-part"><h3>PARTE IV – Tratamento do IVA</h3><ol><li>Calcule o IVA liquidado nas vendas.</li><li>Calcule o IVA dedutível nas compras.</li><li>Identifique o IVA dedutível relativo à aquisição do equipamento, considerando os pressupostos legais aplicáveis.</li><li>Determine o saldo do IVA.</li><li>Identifique se existe IVA a pagar ou a recuperar.</li></ol></div>
+<div class="exercise-part" id="parte-iv"><h3>PARTE IV – Tratamento do IVA</h3><ol><li>Calcule o IVA liquidado nas vendas.</li><li>Calcule o IVA dedutível nas compras.</li><li>Identifique o IVA dedutível relativo à aquisição do equipamento, considerando os pressupostos legais aplicáveis.</li><li>Determine o saldo do IVA.</li><li>Identifique se existe IVA a pagar ou a recuperar.</li></ol></div>
 
-<div class="exercise-part"><h3>PARTE V – Processamento de Salários</h3><p>Com base nos dados fornecidos:</p><ol><li>Calcule o desconto do INSS do trabalhador.</li><li>Calcule a contribuição da entidade empregadora.</li><li>Determine o salário líquido.</li><li>Identifique os encargos totais da empresa com pessoal.</li><li>Elabore os respectivos lançamentos contabilísticos.</li></ol></div>
+<div class="exercise-part" id="parte-v"><h3>PARTE V – Processamento de Salários</h3><p>Com base nos dados fornecidos:</p><ol><li>Calcule o desconto do INSS do trabalhador.</li><li>Calcule a contribuição da entidade empregadora.</li><li>Determine o salário líquido.</li><li>Identifique os encargos totais da empresa com pessoal.</li><li>Elabore os respectivos lançamentos contabilísticos.</li></ol></div>
 
-<div class="exercise-part"><h3>PARTE VI – Balancete de Verificação</h3><p>Elabore o balancete de verificação da empresa, utilizando o seguinte modelo:</p>
+<div class="exercise-part" id="parte-vi"><h3>PARTE VI – Balancete de Verificação</h3><p>Elabore o balancete de verificação da empresa, utilizando o seguinte modelo:</p>
 <table class="exercise-table"><thead><tr><th>Código</th><th>Descrição da conta</th><th>Débito</th><th>Crédito</th><th>Saldo devedor</th><th>Saldo credor</th></tr></thead><tbody><tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td></tr><tr><th colspan="2">TOTAL</th><td></td><td></td><td></td><td></td></tr></tbody></table>
 </div>
 
-<div class="exercise-part"><h3>PARTE VII – Operações de Regularização</h3><p>Efectue as operações de regularização necessárias, considerando:</p><ol><li>Depreciações do exercício.</li><li>Reconhecimento dos encargos financeiros.</li><li>Regularização do IVA.</li><li>Reconhecimento dos encargos com pessoal.</li><li>Apuramento dos custos e proveitos do período.</li></ol></div>
+<div class="exercise-part" id="parte-vii"><h3>PARTE VII – Operações de Regularização</h3><p>Efectue as operações de regularização necessárias, considerando:</p><ol><li>Depreciações do exercício.</li><li>Reconhecimento dos encargos financeiros.</li><li>Regularização do IVA.</li><li>Reconhecimento dos encargos com pessoal.</li><li>Apuramento dos custos e proveitos do período.</li></ol></div>
 
-<div class="exercise-part"><h3>PARTE VIII – Demonstrações Financeiras</h3>
+<div class="exercise-part" id="parte-viii"><h3>PARTE VIII – Demonstrações Financeiras</h3>
 <h4>A) Balanço</h4><p>Apresente a situação patrimonial da empresa no final do período.</p>
 <h4>B) Demonstração de Resultados</h4><p>Determine:</p><ul><li>Rendimentos.</li><li>Custo das mercadorias vendidas.</li><li>Gastos com pessoal.</li><li>Gastos administrativos.</li><li>Depreciações.</li><li>Gastos financeiros.</li><li>Resultado antes de impostos.</li></ul>
 <h4>C) Demonstração de Fluxos de Caixa</h4><p>Identifique:</p><ul><li>Fluxos das actividades operacionais.</li><li>Fluxos das actividades de investimento.</li><li>Fluxos das actividades de financiamento.</li></ul>
 </div>
 
-<div class="exercise-part"><h3>PARTE IX – Questões Teóricas e de Análise</h3><p>Responda de forma fundamentada:</p><ol><li>Qual é a diferença entre activo, passivo e capital próprio?</li><li>Qual é a diferença entre despesa e pagamento?</li><li>Uma empresa pode apresentar lucro e não ter dinheiro disponível em caixa? Justifique.</li><li>Qual é a diferença entre depreciação e amortização?</li><li>Por que razão o IVA liquidado não deve ser considerado rendimento da empresa?</li><li>Qual é a consequência de registar uma despesa como activo?</li><li>O que acontece quando o total dos débitos não corresponde ao total dos créditos?</li><li>Qual é a importância do balancete de verificação?</li><li>Como é que a depreciação influencia o resultado do exercício?</li><li>Qual é a responsabilidade do contabilista na elaboração das demonstrações financeiras?</li></ol>
+<div class="exercise-part" id="parte-ix"><h3>PARTE IX – Questões Teóricas e de Análise</h3><p>Responda de forma fundamentada:</p><ol><li>Qual é a diferença entre activo, passivo e capital próprio?</li><li>Qual é a diferença entre despesa e pagamento?</li><li>Uma empresa pode apresentar lucro e não ter dinheiro disponível em caixa? Justifique.</li><li>Qual é a diferença entre depreciação e amortização?</li><li>Por que razão o IVA liquidado não deve ser considerado rendimento da empresa?</li><li>Qual é a consequência de registar uma despesa como activo?</li><li>O que acontece quando o total dos débitos não corresponde ao total dos créditos?</li><li>Qual é a importância do balancete de verificação?</li><li>Como é que a depreciação influencia o resultado do exercício?</li><li>Qual é a responsabilidade do contabilista na elaboração das demonstrações financeiras?</li></ol>
 </div>
 
-<div class="exercise-part"><h3>PARTE X – Relatório Final do Contabilista</h3><p>Imagine que o gerente da COMERCIAL FÉNIX, LDA. solicita um relatório sobre a situação financeira da empresa no final de Janeiro.</p><p>Elabore um relatório profissional contendo:</p><ol><li>Situação patrimonial.</li><li>Resultado económico do período.</li><li>Situação das dívidas de clientes e fornecedores.</li><li>Disponibilidade financeira.</li><li>Obrigações fiscais.</li><li>Principais riscos financeiros identificados.</li><li>Recomendações para melhorar a gestão financeira.</li></ol></div>
+<div class="exercise-part" id="parte-x"><h3>PARTE X – Relatório Final do Contabilista</h3><p>Imagine que o gerente da COMERCIAL FÉNIX, LDA. solicita um relatório sobre a situação financeira da empresa no final de Janeiro.</p><p>Elabore um relatório profissional contendo:</p><ol><li>Situação patrimonial.</li><li>Resultado económico do período.</li><li>Situação das dívidas de clientes e fornecedores.</li><li>Disponibilidade financeira.</li><li>Obrigações fiscais.</li><li>Principais riscos financeiros identificados.</li><li>Recomendações para melhorar a gestão financeira.</li></ol></div>
 
-<div class="exercise-part"><h3>Critérios de Avaliação</h3><table class="exercise-table"><thead><tr><th>Critério</th><th>Pontuação</th></tr></thead><tbody><tr><td>Análise patrimonial</td><td>2 valores</td></tr><tr><td>Diário Geral</td><td>3 valores</td></tr><tr><td>Razão Geral</td><td>2 valores</td></tr><tr><td>Tratamento do IVA</td><td>2 valores</td></tr><tr><td>Processamento salarial</td><td>2 valores</td></tr><tr><td>Balancete de verificação</td><td>2 valores</td></tr><tr><td>Regularizações</td><td>2 valores</td></tr><tr><td>Demonstrações financeiras</td><td>3 valores</td></tr><tr><td>Relatório profissional</td><td>2 valores</td></tr><tr><th>TOTAL</th><th>20 valores</th></tr></tbody></table></div>
+<div class="exercise-part" id="avaliacao"><h3>Critérios de Avaliação</h3><table class="exercise-table"><thead><tr><th>Critério</th><th>Pontuação</th></tr></thead><tbody><tr><td>Análise patrimonial</td><td>2 valores</td></tr><tr><td>Diário Geral</td><td>3 valores</td></tr><tr><td>Razão Geral</td><td>2 valores</td></tr><tr><td>Tratamento do IVA</td><td>2 valores</td></tr><tr><td>Processamento salarial</td><td>2 valores</td></tr><tr><td>Balancete de verificação</td><td>2 valores</td></tr><tr><td>Regularizações</td><td>2 valores</td></tr><tr><td>Demonstrações financeiras</td><td>3 valores</td></tr><tr><td>Relatório profissional</td><td>2 valores</td></tr><tr><th>TOTAL</th><th>20 valores</th></tr></tbody></table></div>
 
-<div class="exercise-part"><h3>Instruções</h3><ul><li>Apresente todos os cálculos e justificações.</li><li>Utilize o Plano Geral de Contabilidade.</li><li>Respeite o princípio das partidas dobradas.</li><li>Não omita os documentos e movimentos contabilísticos.</li><li>Apresente os resultados de forma organizada e profissional.</li></ul><p class="exercise-note"><strong>Nota:</strong> Exercício exclusivamente académico. Na resolução, deverão ser observadas as regras fiscais e contabilísticas aplicáveis em Angola.</p></div>
+<div class="exercise-part" id="instrucoes"><h3>Instruções</h3><ul><li>Apresente todos os cálculos e justificações.</li><li>Utilize o Plano Geral de Contabilidade.</li><li>Respeite o princípio das partidas dobradas.</li><li>Não omita os documentos e movimentos contabilísticos.</li><li>Apresente os resultados de forma organizada e profissional.</li></ul><p class="exercise-note"><strong>Nota:</strong> Exercício exclusivamente académico. Na resolução, deverão ser observadas as regras fiscais e contabilísticas aplicáveis em Angola.</p></div>
 <div class="exercise-end"><strong>Enunciado disponibilizado para estudo e avaliação.</strong><br>A resolução ainda não está publicada. O desafio é aplicar os conhecimentos e apresentar um trabalho contabilístico completo e fundamentado.</div>
 </div></section>
 
