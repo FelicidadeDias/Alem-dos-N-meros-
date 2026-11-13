@@ -1,206 +1,96 @@
 <!doctype html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#102b35">
-  <meta name="description" content="Além dos Números — um espaço de aprendizagem, partilha, motivação e união para a formação em Contabilidade.">
-  <title>Além dos Números | Formação em Contabilidade</title>
-  <style>
-    :root{
-      --ink:#102b35;--ink-2:#1b4148;--green:#2e6b5c;--mint:#dcebe4;
-      --gold:#c69a55;--cream:#f7f5ef;--paper:#fffefa;--muted:#657579;
-      --line:#e6e5dc;--shadow:0 22px 60px rgba(16,43,53,.10);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
-    a{color:inherit}
-    .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
-    .topbar{padding:18px 0;border-bottom:1px solid rgba(16,43,53,.08);background:rgba(247,245,239,.92)}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:13px;text-decoration:none;font-weight:750;letter-spacing:-.03em}
-    .brand img{width:52px;height:52px;object-fit:contain;border-radius:12px;background:#fff;padding:3px}
-    .brand span{font-size:1.08rem}
-    .nav-note{font-size:.82rem;color:var(--muted);letter-spacing:.04em}
-    .hero{position:relative;overflow:hidden;padding:82px 0 76px;background:linear-gradient(120deg,#102b35 0%,#173e45 65%,#24584f 100%);color:#fff}
-    .hero:before,.hero:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.12);border-radius:50%;pointer-events:none}
-    .hero:before{width:460px;height:460px;right:-130px;top:-230px}
-    .hero:after{width:330px;height:330px;right:-65px;top:-165px}
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:56px;position:relative;z-index:1}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:#e5c58f;font-size:.76rem;font-weight:750;letter-spacing:.16em;text-transform:uppercase}
-    .eyebrow:before{content:"";width:26px;height:1px;background:var(--gold)}
-    h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(3rem,6vw,5.2rem);font-weight:500;line-height:1.03;letter-spacing:-.045em;margin:20px 0}
-    h1 em{color:#e5c58f;font-style:normal}
-    .hero p{max-width:590px;color:rgba(255,255,255,.78);font-size:1.08rem;margin:0}
-    .hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:30px}
-    .pill{display:inline-block;border-radius:999px;padding:12px 19px;background:var(--gold);color:#172f34;text-decoration:none;font-weight:750;font-size:.9rem}
-    .quiet{font-size:.88rem;color:rgba(255,255,255,.65)}
-    .visual{min-height:310px;display:grid;place-items:center;position:relative}
-    .ledger{width:min(100%,330px);aspect-ratio: .88;background:#f9f7ef;border-radius:18px;padding:25px;box-shadow:0 30px 70px rgba(0,0,0,.25);transform:rotate(3deg);position:relative;color:var(--ink)}
-    .ledger:before{content:"";position:absolute;left:53px;top:0;bottom:0;width:1px;background:#e8c8b9}
-    .ledger-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #d9ddd4;padding-bottom:14px;font-size:.67rem;color:#6b7a77;letter-spacing:.12em;text-transform:uppercase}
-    .ledger-mark{font-family:Georgia,serif;font-size:1.55rem;color:var(--green);margin:20px 0 12px}
-    .ledger-line{height:1px;background:#dfe3da;margin:17px 0}
-    .ledger-row{display:flex;justify-content:space-between;font-family:Georgia,serif;font-size:.88rem;color:#526568;padding:6px 0}
-    .ledger-row strong{color:var(--green);font-weight:600}
-    .ledger-stamp{position:absolute;right:-24px;bottom:26px;background:var(--gold);color:#1c3538;padding:12px 18px;border-radius:8px;font-weight:800;font-size:.72rem;letter-spacing:.1em;transform:rotate(-8deg);box-shadow:0 8px 22px #0002}
-    .section{padding:76px 0}
-    .section-head{max-width:680px;margin-bottom:34px}
-    .kicker{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--green);font-weight:800}
-    h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,4vw,3.1rem);line-height:1.12;letter-spacing:-.035em;font-weight:500;margin:12px 0 14px}
-    .lead{font-size:1.04rem;color:var(--muted);margin:0}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:25px;box-shadow:0 8px 26px rgba(16,43,53,.035)}
-    .icon{width:42px;height:42px;border-radius:12px;background:var(--mint);display:grid;place-items:center;color:var(--green);margin-bottom:17px}
-    .icon svg{width:22px;height:22px}
-    .card h3{font-size:1.04rem;margin:0 0 8px;letter-spacing:-.02em}
-    .card p{margin:0;color:var(--muted);font-size:.94rem}
-    .accounting{background:#eeefe8}
-    .accounting-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:center}
-    .quote-box{background:var(--ink);color:white;padding:34px;border-radius:18px;position:relative;overflow:hidden}
-    .quote-box:after{content:"";position:absolute;width:190px;height:190px;border:1px solid #ffffff22;border-radius:50%;right:-65px;bottom:-105px}
-    .quote-box .big{font-family:Georgia,serif;font-size:3.4rem;line-height:1;color:var(--gold)}
-    .quote-box p{font-family:Georgia,serif;font-size:1.42rem;line-height:1.4;margin:12px 0 0;position:relative;z-index:1}
-    .steps{display:grid;gap:17px}
-    .step{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start}
-    .number{width:36px;height:36px;border:1px solid #b7c9bf;border-radius:50%;display:grid;place-items:center;color:var(--green);font-weight:800;font-size:.85rem}
-    .step h3{margin:0 0 3px;font-size:1rem}
-    .step p{margin:0;color:var(--muted);font-size:.93rem}
-    .encouragement{background:var(--paper)}
-    .encourage-panel{background:linear-gradient(120deg,#e3eee7,#f5f0e4);border-radius:22px;padding:clamp(28px,5vw,54px);display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
-    .encourage-panel h2{max-width:650px}
-    .encourage-panel p{max-width:700px;color:#536568;margin:0}
-    .seal{width:116px;height:116px;border:1px solid #b9a16e;border-radius:50%;display:grid;place-items:center;text-align:center;color:var(--green);font-family:Georgia,serif;font-size:1.05rem;line-height:1.15;transform:rotate(8deg)}
-    .teacher{padding:58px 0;background:#102b35;color:#fff}
-    .teacher-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
-    .teacher small{color:#e5c58f;text-transform:uppercase;letter-spacing:.16em;font-weight:750}
-    .teacher h2{margin:8px 0 5px}
-    .teacher p{color:#b9c9c7;margin:0}
-    .teacher-tag{border:1px solid #ffffff35;border-radius:999px;padding:10px 17px;color:#e8d4ad;font-size:.85rem;white-space:nowrap}
-    footer{padding:22px 0;background:#0b2028;color:#9db0ae;font-size:.8rem}
-    .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-    @media(max-width:800px){.hero-grid,.accounting-grid{grid-template-columns:1fr;gap:30px}.visual{min-height:280px}.cards{grid-template-columns:1fr}.section{padding:58px 0}.hero{padding:62px 0}.encourage-panel{grid-template-columns:1fr}.seal{width:88px;height:88px;font-size:.88rem}.teacher-inner{align-items:flex-start;flex-direction:column}.nav-note{display:none}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071321">
+<meta name="description" content="Além dos Números — formação, partilha, motivação e crescimento em Contabilidade.">
+<title>Além dos Números | Formação em Contabilidade</title>
+<style>
+:root{--bg:#071321;--panel:#0d1d30;--panel2:#11263b;--blue:#1769aa;--blue2:#62b6ff;--gold:#d5ad68;--green:#3c9877;--text:#eef4fa;--muted:#a6b5c4;--line:#23384c;--shadow:0 22px 65px #0006}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+header{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(110deg,#071321,#0c2741 65%,#102d35);border-bottom:1px solid var(--line)}
+header:before{content:"";position:absolute;z-index:-1;inset:-60px 0 -70px 38%;background:url("file_00000000e004820eadeabd61ec2da09e.png") center/contain no-repeat;opacity:.09;filter:grayscale(.2);pointer-events:none}
+.nav{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:15px;text-decoration:none;font-weight:800;letter-spacing:.01em}.brand img{width:66px;height:66px;object-fit:contain;border-radius:14px;padding:5px;background:#fff;box-shadow:0 8px 28px #0005}.brand span{font-size:1.15rem}.nav small{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-size:.72rem;font-weight:800}
+.hero{position:relative;overflow:hidden;padding:84px 0 78px;background:radial-gradient(ellipse at 85% 18%,#1769aa44,transparent 34%),linear-gradient(125deg,#071321,#0b1d31 62%,#0d2c35)}
+.hero:after{content:"";position:absolute;width:520px;height:520px;border:1px solid #62b6ff24;border-radius:50%;right:-150px;top:-240px;box-shadow:0 0 0 55px #62b6ff0b,0 0 0 110px #62b6ff08}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
+.kicker{color:var(--gold);font-size:.75rem;font-weight:850;letter-spacing:.17em;text-transform:uppercase}.kicker:before{content:"";display:inline-block;width:27px;height:1px;background:var(--gold);vertical-align:middle;margin-right:10px}
+h1,h2,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.035em}h1{font-size:clamp(3.2rem,6.5vw,5.7rem);line-height:1.02;margin:18px 0 22px}h1 em{font-style:normal;color:var(--gold)}.hero p{max-width:620px;color:#c2cfdb;font-size:1.08rem;margin:0}.actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-block;text-decoration:none;background:var(--gold);color:#152235;padding:12px 20px;border-radius:7px;font-weight:850}.hint{font-size:.87rem;color:var(--muted)}
+.hero-art{min-height:340px;display:grid;place-items:center;position:relative}.hero-art svg{width:min(100%,480px);height:auto;filter:drop-shadow(0 24px 35px #0008)}.float-label{position:absolute;bottom:10px;right:0;background:#102b3e;border:1px solid #d5ad6866;color:var(--gold);border-radius:8px;padding:9px 14px;font-size:.75rem;font-weight:800;letter-spacing:.1em}
+section.content{padding:76px 0}.section-title{max-width:740px;margin-bottom:34px}.section-title h2{font-size:clamp(2.1rem,4vw,3.3rem);line-height:1.1;margin:12px 0}.lead{color:var(--muted);margin:0;font-size:1.02rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(145deg,#10243a,#0b1a2b);border:1px solid var(--line);border-radius:15px;padding:25px;box-shadow:var(--shadow)}.icon{width:47px;height:47px;display:grid;place-items:center;border-radius:12px;background:#1769aa2b;color:var(--blue2);margin-bottom:17px}.icon svg{width:25px;height:25px}.card h3{margin:0 0 7px;font-size:1.03rem}.card p{margin:0;color:var(--muted);font-size:.93rem}
+.quote-section{background:linear-gradient(115deg,#0b1b2d,#0d263b);border-block:1px solid var(--line)}.quote-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:center}.quote-visual{border:1px solid #d5ad6855;border-radius:18px;padding:26px;background:radial-gradient(circle at 30% 20%,#1769aa40,transparent 60%),#091827}.quote-visual svg{width:100%;height:auto;max-height:260px}.quote{font:clamp(1.4rem,2.7vw,2rem)/1.45 Georgia,serif;color:#f2f4f6;margin:0}.signature{display:block;margin-top:17px;color:var(--gold);font-weight:800;font-style:italic;letter-spacing:.02em}
+.definition{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}.definition h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.12;margin:12px 0}.steps{display:grid;gap:15px;margin-top:24px}.step{display:grid;grid-template-columns:42px 1fr;gap:13px}.num{width:36px;height:36px;border:1px solid #3c9877;border-radius:50%;display:grid;place-items:center;color:#78c7a7;font-weight:800;font-size:.83rem}.step h3{margin:0 0 2px;font-size:1rem}.step p{margin:0;color:var(--muted);font-size:.92rem}
+.motivation{background:linear-gradient(120deg,#0b2032,#102a36);border-block:1px solid var(--line)}.motivation-box{border-left:3px solid var(--gold);padding:10px 0 10px 30px;max-width:900px}.motivation h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.13;margin:12px 0 17px}.motivation p{color:#c1ced8;font-size:1.02rem;margin:0}.motivation .signature{font-size:1rem}
+.roster{background:#081522}.roster-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:30px}.roster-head h2{font-size:clamp(2.1rem,4vw,3.1rem);margin:10px 0 0}.roster-note{color:var(--muted);font-size:.85rem;max-width:250px}.students{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.student{min-height:78px;display:flex;align-items:center;gap:16px;padding:17px 20px;border:1px solid #294057;background:linear-gradient(110deg,#10243a,#0b1b2d);border-radius:12px}.student .index{font-size:.76rem;color:var(--green);font-weight:900;letter-spacing:.12em}.student strong{font-family:"Palatino Linotype",Palatino,Georgia,serif;font-size:1.05rem;font-weight:800;font-style:italic;letter-spacing:.015em;color:#f3e3c2}
+.teacher{padding:55px 0;background:linear-gradient(100deg,#0b1e30,#102c3b);border-top:1px solid var(--line)}.teacher-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}.teacher h2{font-size:2.2rem;margin:7px 0}.teacher p{color:var(--muted);margin:0}.teacher-badge{border:1px solid #3c987766;color:#8bd0b1;border-radius:999px;padding:10px 16px;font-size:.83rem}
+footer{padding:23px 0;background:#050e18;color:#8193a4;font-size:.8rem}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:820px){.hero-grid,.quote-grid,.definition{grid-template-columns:1fr;gap:30px}.hero-art{min-height:270px}.cards{grid-template-columns:1fr}.students{grid-template-columns:1fr}.roster-head{align-items:flex-start;flex-direction:column}.teacher-inner{align-items:flex-start;flex-direction:column}.nav small{display:none}.hero{padding:62px 0}.content{padding:58px 0!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="wrap nav">
-      <a class="brand" href="#inicio" aria-label="Além dos Números — início">
-        <img src="file_00000000e004820eadeabd61ec2da09e.png" alt="Logótipo Além dos Números">
-        <span>Além dos Números</span>
-      </a>
-      <div class="nav-note">FORMAÇÃO EM CONTABILIDADE · APRENDER • PRATICAR • EVOLUIR</div>
-    </div>
-  </header>
+<header id="inicio"><div class="wrap nav">
+<a class="brand" href="#inicio"><img src="file_00000000e004820eadeabd61ec2da09e.png" alt="Logótipo Além dos Números"><span>ALÉM DOS NÚMEROS</span></a>
+<small>Formação em Contabilidade · Aprender • Praticar • Evoluir</small>
+</div></header>
+<main>
+<section class="hero"><div class="wrap hero-grid">
+<div><span class="kicker">Conhecimento que nos une</span><h1>Mais do que<br><em>números.</em><br>Uma evolução.</h1>
+<p>Um espaço de aprendizagem, partilha e motivação para os formandos de Contabilidade. Aqui, cada pessoa conta, cada dúvida merece atenção e cada conquista fortalece o grupo.</p>
+<div class="actions"><a class="btn" href="#proposito">Explorar o nosso espaço</a><span class="hint">Respeito · União · Crescimento</span></div></div>
+<div class="hero-art" aria-label="Ilustração contabilística de livro, calculadora e gráfico">
+<svg viewBox="0 0 520 390" role="img">
+<defs><linearGradient id="book" x2="1" y2="1"><stop stop-color="#1a5c91"/><stop offset="1" stop-color="#0a2942"/></linearGradient><linearGradient id="gold" x2="1" y2="1"><stop stop-color="#f1d49b"/><stop offset="1" stop-color="#b9853e"/></linearGradient></defs>
+<circle cx="260" cy="185" r="155" fill="#1769aa" opacity=".10"/><circle cx="260" cy="185" r="125" fill="none" stroke="#62b6ff" opacity=".2" stroke-dasharray="4 9"/>
+<g transform="translate(65 78) rotate(-7 170 120)"><path d="M20 30 Q100 0 180 34 V245 Q100 210 20 240Z" fill="url(#book)" stroke="#62b6ff" stroke-width="2"/><path d="M180 34 Q260 0 340 30 V240 Q260 210 180 245Z" fill="#102c42" stroke="#62b6ff" stroke-width="2"/><path d="M180 34V245" stroke="#d5ad68" stroke-width="3"/><g stroke="#9fc8e7" opacity=".65"><path d="M48 75h95M48 101h95M48 127h95M48 153h95M218 75h90M218 101h90M218 127h90M218 153h90"/></g><g fill="#d5ad68"><rect x="48" y="176" width="22" height="37" rx="3"/><rect x="78" y="162" width="22" height="51" rx="3"/><rect x="108" y="140" width="22" height="73" rx="3"/></g></g>
+<g transform="translate(345 220)"><rect width="105" height="130" rx="13" fill="#0b1725" stroke="#d5ad68" stroke-width="2"/><rect x="13" y="13" width="79" height="26" rx="4" fill="#193e50"/><text x="83" y="31" fill="#8bd0b1" font-size="12" text-anchor="end">1.250,00</text><g fill="#1b3b50" stroke="#62b6ff" stroke-opacity=".45"><rect x="13" y="52" width="20" height="17" rx="3"/><rect x="42" y="52" width="20" height="17" rx="3"/><rect x="71" y="52" width="20" height="17" rx="3"/><rect x="13" y="79" width="20" height="17" rx="3"/><rect x="42" y="79" width="20" height="17" rx="3"/><rect x="71" y="79" width="20" height="17" rx="3"/><rect x="13" y="106" width="49" height="12" rx="3"/><rect x="71" y="106" width="20" height="12" rx="3"/></g></g>
+<path d="M85 320l38-29 30 12 38-51" fill="none" stroke="#3c9877" stroke-width="4" stroke-linecap="round"/><path d="M180 252l12 0-3 12" fill="none" stroke="#3c9877" stroke-width="4"/>
+<circle cx="95" cy="65" r="7" fill="#d5ad68"/><circle cx="445" cy="75" r="5" fill="#3c9877"/><circle cx="300" cy="330" r="5" fill="#62b6ff"/>
+</svg><span class="float-label">RIGOR · ANÁLISE · DECISÃO</span></div>
+</div></section>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="wrap hero-grid">
-        <div>
-          <span class="eyebrow">Um espaço para crescer em conjunto</span>
-          <h1>Aprender.<br><em>Compreender.</em><br>Evoluir.</h1>
-          <p>Mais do que estudar números, estamos aqui para desenvolver conhecimento, confiança e capacidade de pensar. Cada formando tem o seu ritmo; juntos, construímos o caminho.</p>
-          <div class="hero-actions">
-            <a class="pill" href="#proposito">Conhecer este espaço</a>
-            <span class="quiet">Respeito · União · Aprendizagem</span>
-          </div>
-        </div>
-        <div class="visual" aria-label="Ilustração decorativa de um livro de registos contabilísticos">
-          <div class="ledger">
-            <div class="ledger-top"><span>Caderno de aprendizagem</span><span>01 / 26</span></div>
-            <div class="ledger-mark">Além dos Números</div>
-            <div class="ledger-line"></div>
-            <div class="ledger-row"><span>Conhecimento</span><strong>+</strong></div>
-            <div class="ledger-row"><span>Prática</span><strong>+</strong></div>
-            <div class="ledger-row"><span>Confiança</span><strong>+</strong></div>
-            <div class="ledger-line"></div>
-            <div class="ledger-row"><span>O nosso progresso</span><strong>Contínuo</strong></div>
-            <div class="ledger-stamp">EM CONSTRUÇÃO</div>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="content" id="proposito"><div class="wrap">
+<div class="section-title"><span class="kicker">O propósito</span><h2>Um canal de apoio à nossa formação.</h2><p class="lead">Este espaço será utilizado para partilhar informações necessárias, materiais de apoio e mensagens que contribuam para a capacitação de cada formando — respeitando as suas necessidades individuais e fortalecendo o grupo.</p></div>
+<div class="cards">
+<article class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4a2 2 0 0 1 2-2h13v17H7a2 2 0 0 0-2 2zM5 4v17M9 7h7M9 11h7"/></svg></div><h3>Materiais e informação</h3><p>Recursos que ajudam a estudar, rever matérias e transformar teoria em conhecimento aplicável.</p></article>
+<article class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-8-4.5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.5-8 11-8 11Z"/><path d="M8 12h2l1.2-2.5L13 15l1.2-3H17"/></svg></div><h3>Motivação e confiança</h3><p>Incentivo para enfrentar desafios, aprender com os erros e reconhecer cada progresso.</p></article>
+<article class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.3"/><path d="M3.5 20v-1.5A5.5 5.5 0 0 1 9 13h.5a5.5 5.5 0 0 1 5.5 5.5V20M15 14a4.5 4.5 0 0 1 5.5 4.4V20"/></svg></div><h3>Respeito e união</h3><p>Um ambiente de compreensão, colaboração e respeito pelo percurso de cada integrante.</p></article>
+</div></div></section>
 
-    <section class="section" id="proposito">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="kicker">O propósito</span>
-          <h2>Um canal de apoio à nossa formação.</h2>
-          <p class="lead">Este será um espaço de partilha de informações, materiais e orientações que possam ajudar cada formando a fortalecer os seus conhecimentos e a avançar na sua capacitação.</p>
-        </div>
-        <div class="cards">
-          <article class="card">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4.5A2.5 2.5 0 0 1 7.5 2H20v17H7.5A2.5 2.5 0 0 0 5 21.5z"/><path d="M5 4.5v17M9 7h7M9 11h7"/></svg></div>
-            <h3>Informação e materiais</h3>
-            <p>Conteúdos e recursos de apoio para estudar, rever conceitos e consolidar a aprendizagem.</p>
-          </article>
-          <article class="card">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-8-4.5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.5-8 11-8 11Z"/><path d="M8 12h2l1.2-2.5L13 15l1.2-3H17"/></svg></div>
-            <h3>Motivação e confiança</h3>
-            <p>Palavras de incentivo para enfrentar as dificuldades, reconhecer progressos e continuar.</p>
-          </article>
-          <article class="card">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.3"/><path d="M3.5 20v-1.5A5.5 5.5 0 0 1 9 13h.5a5.5 5.5 0 0 1 5.5 5.5V20M15 14a4.5 4.5 0 0 1 5.5 4.4V20"/></svg></div>
-            <h3>União e respeito</h3>
-            <p>Um ambiente de compreensão, colaboração e respeito pelas necessidades e pelo ritmo de cada pessoa.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+<section class="content quote-section"><div class="wrap quote-grid">
+<div class="quote-visual"><svg viewBox="0 0 420 260" role="img" aria-label="Ilustração de balancete contabilístico"><rect x="35" y="18" width="350" height="220" rx="12" fill="#0d2031" stroke="#d5ad68" stroke-opacity=".65"/><text x="58" y="51" fill="#d5ad68" font-size="13" letter-spacing="3">BALANCETE</text><path d="M58 68h304M58 105h304M58 142h304M58 179h304M58 216h304" stroke="#2a4962"/><g fill="#b9c8d5" font-size="12"><text x="60" y="92">Caixa</text><text x="60" y="129">Clientes</text><text x="60" y="166">Fornecedores</text><text x="60" y="203">Capital</text></g><g fill="#8bd0b1" font-size="12" text-anchor="end"><text x="340" y="92">500.000</text><text x="340" y="129">800.000</text><text x="340" y="166">900.000</text><text x="340" y="203">5.500.000</text></g><path d="M250 60v-13m-9 0h18" stroke="#d5ad68" stroke-width="2"/></svg></div>
+<div><p class="quote">“A Contabilidade não é apenas registar números. É compreender o que eles revelam e transformar informação em decisões.”</p><span class="signature">— Professor Felicidade Dias</span></div>
+</div></section>
 
-    <section class="section accounting" id="contabilidade">
-      <div class="wrap accounting-grid">
-        <div class="quote-box">
-          <div class="big">“</div>
-          <p>A Contabilidade não é apenas registar números. É compreender o que eles revelam e transformar informação em decisões.</p>
-        </div>
-        <div>
-          <span class="kicker">Uma primeira ideia</span>
-          <h2>O que é, afinal, a Contabilidade?</h2>
-          <p class="lead" style="margin-bottom:24px">A Contabilidade é um sistema de informação que identifica, regista, organiza e comunica os factos económicos e financeiros de uma entidade. Ajuda-nos a perceber a sua situação, acompanhar os resultados e apoiar decisões.</p>
-          <div class="steps">
-            <div class="step"><span class="number">01</span><div><h3>Identificar</h3><p>Reconhecer os acontecimentos que têm impacto económico ou financeiro.</p></div></div>
-            <div class="step"><span class="number">02</span><div><h3>Registar e organizar</h3><p>Aplicar os princípios e procedimentos contabilísticos com rigor e método.</p></div></div>
-            <div class="step"><span class="number">03</span><div><h3>Analisar e compreender</h3><p>Ler a informação para perceber o que aconteceu e o que ela significa.</p></div></div>
-            <div class="step"><span class="number">04</span><div><h3>Apoiar decisões</h3><p>Usar informação fiável para planear, avaliar e decidir melhor.</p></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="content" id="contabilidade"><div class="wrap definition">
+<div><span class="kicker">Uma primeira base</span><h2>O que é, afinal, a Contabilidade?</h2><p class="lead">A Contabilidade é um sistema de informação que identifica, regista, classifica, resume e comunica os factos económicos e financeiros de uma entidade. Permite conhecer a sua situação patrimonial, acompanhar os resultados e apoiar decisões.</p></div>
+<div class="steps">
+<div class="step"><span class="num">01</span><div><h3>Identificar</h3><p>Reconhecer os acontecimentos com impacto económico e financeiro.</p></div></div>
+<div class="step"><span class="num">02</span><div><h3>Registar e classificar</h3><p>Aplicar regras, contas e procedimentos com rigor e método.</p></div></div>
+<div class="step"><span class="num">03</span><div><h3>Resumir e analisar</h3><p>Organizar os dados para compreender a situação e os resultados.</p></div></div>
+<div class="step"><span class="num">04</span><div><h3>Comunicar e decidir</h3><p>Transformar informação fiável em apoio à gestão e à tomada de decisões.</p></div></div>
+</div></div></section>
 
-    <section class="section encouragement" id="motivacao">
-      <div class="wrap">
-        <div class="encourage-panel">
-          <div>
-            <span class="kicker">Uma mensagem para quem está a começar</span>
-            <h2>Não precisas de saber tudo hoje. Precisas de estar disposto a aprender.</h2>
-            <p>É natural sentir dúvidas diante de um tema novo. Não transformes uma dificuldade numa sentença sobre a tua capacidade. Uma dúvida é um ponto de partida; um erro, quando compreendido, pode tornar-se uma lição. Aprende ao teu ritmo, pratica com consistência, pergunta sempre que necessário e valoriza cada pequeno avanço. O progresso não exige que sejamos iguais — exige que continuemos comprometidos.</p>
-          </div>
-          <div class="seal" aria-hidden="true">Um passo<br>de cada<br>vez</div>
-        </div>
-      </div>
-    </section>
+<section class="content motivation"><div class="wrap"><div class="motivation-box">
+<span class="kicker">Uma mensagem para quem está a começar</span><h2>Não precisas de dominar tudo hoje. Precisas de não desistir de aprender.</h2>
+<p>É natural sentir dúvidas quando começamos algo novo. Não confundas aquilo que ainda não sabes com aquilo que és capaz de aprender. Cada exercício resolvido aumenta a tua experiência; cada erro compreendido fortalece o teu raciocínio. Faz perguntas, pratica, pede ajuda e respeita o teu próprio ritmo. Não estamos numa competição entre colegas: somos uma equipa em que o crescimento de um pode inspirar o crescimento de todos. O teu lugar neste grupo é importante. Continua — o conhecimento constrói-se um passo de cada vez.</p>
+<span class="signature">— Professor Felicidade Dias</span>
+</div></div></section>
 
-    <section class="teacher">
-      <div class="wrap teacher-inner">
-        <div>
-          <small>Orientação da formação</small>
-          <h2>Professor Felicidade Dias</h2>
-          <p>Aprender • Praticar • Evoluir — lado a lado, com respeito e espírito de equipa.</p>
-        </div>
-        <div class="teacher-tag">Um grupo. Um caminho. Crescimento conjunto.</div>
-      </div>
-    </section>
-  </main>
+<section class="content roster" id="formandos"><div class="wrap">
+<div class="roster-head"><div><span class="kicker">A nossa equipa</span><h2>Formandos</h2></div><p class="roster-note">Cada nome representa uma história, um percurso e um potencial a desenvolver.</p></div>
+<div class="students">
+<div class="student"><span class="index">01</span><strong>CLÁUDIA BENGUELA</strong></div>
+<div class="student"><span class="index">02</span><strong>MADALENA AFONSO PANZO</strong></div>
+<div class="student"><span class="index">03</span><strong>AMÉLIA VILONGO ALFREDO</strong></div>
+<div class="student"><span class="index">04</span><strong>GRABIELA DE FÁTIMA SEBASTIÃO</strong></div>
+<div class="student"><span class="index">05</span><strong>NÁDIA AUGUSTA JAMBA ZUA</strong></div>
+<div class="student"><span class="index">06</span><strong>MARIA LANDO ANDRÉ</strong></div>
+</div></div></section>
 
-  <footer>
-    <div class="wrap foot">
-      <span>© <span id="year"></span> Além dos Números</span>
-      <span>Conhecimento que ganha significado quando é partilhado.</span>
-    </div>
-  </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
-</html>
+<section class="teacher"><div class="wrap teacher-inner"><div><span class="kicker">Orientação da formação</span><h2>Professor Felicidade Dias</h2><p>Aprender • Praticar • Evoluir — lado a lado, com respeito e espírito de equipa.</p></div><span class="teacher-badge">Um grupo · Um caminho · Crescimento conjunto</span></div></section>
+</main>
+<footer><div class="wrap foot"><span>© <span id="year"></span> Além dos Números</span><span>Conhecimento que ganha significado quando é partilhado.</span></div></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>
